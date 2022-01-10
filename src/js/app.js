@@ -1,6 +1,7 @@
-var a = 0;
-var b = 1;
+const hello = () => {
+    console.log('hello');
+}
 
-var c = a+b;
+a = 0;
 
-console.log(c);
+console.log(hello());
