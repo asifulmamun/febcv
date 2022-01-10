@@ -5,7 +5,7 @@ const babel = require('gulp-babel');
 const {watch} = require('gulp');
 
 
-
+// Directory/Folder
 const src_dir_sass = './src/sass/**/*.scss';
 const dest_dir_sass = './assets/css';
 const src_dir_js = './src/js/**/*.js';
@@ -27,29 +27,19 @@ exports.sass = gulpsass;
 
 
 
-
 // Babel JS - ~gulp js
 function gulpjs() {
-
-
-return gulp.src(src_dir_js)
-.pipe(babel({
-    presets: ['@babel/env']
-}))
-.pipe(gulp.dest(dest_dir_js))
-
+    return gulp.src(src_dir_js)
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(gulp.dest(dest_dir_js))
 };
 exports.js = gulpjs;
 
-// gulp.task('js', () =>
-//     gulp.src(src_dir_js)
-//         .pipe(babel({
-//             presets: ['@babel/env']
-//         }))
-//         .pipe(gulp.dest(dest_dir_js))
-// );
 
 
+// Default gulp - ~gulp
 exports.default = function() {
     
     watch(src_dir_sass, gulpsass);
